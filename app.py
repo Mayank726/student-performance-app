@@ -4,13 +4,12 @@ import joblib
 
 import streamlit as st
 import pandas as pd
-import joblib
+import pickle
 
 
 # Load Train Model
-model = joblib.load("student_model.pkl")
-
-st.title("Student Perfomance Predection")
+with open("student_model.pkl", "rb") as f:
+    model = pickle.load(f)
 
 
 # Take Inputs from user
